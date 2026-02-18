@@ -45,4 +45,5 @@ Outil graphique permettant le calcul de sous-réseaux IPv4
 ---
 
 ## 📌 Objectif professionnel
-Recher
+🎯 Évoluer au sein d’une équipe infrastructure afin de participer à l’administration, la sécurisation et l’optimisation d’environnements systèmes et réseaux.
+
