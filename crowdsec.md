@@ -1,28 +1,43 @@
 # CrowdSec – Protection & Détection
 
 ## 🎯 Objectif
-Mettre en place un mécanisme de détection et de blocage des comportements malveillants au sein de l’infrastructure.
+
+Mettre en place une solution de détection comportementale afin d’identifier et bloquer automatiquement les activités malveillantes (bruteforce, scans réseau, tentatives d’intrusion) au sein de l’infrastructure.
 
 ---
 
-## 🔧 Architecture
+## 🏗️ Architecture mise en place
 
-- CrowdSec installé sur Debian
-- Bouncer configuré sur pfSense
-- Analyse des logs système
+- CrowdSec installé sur une machine Debian dédiée
+- Collecte et analyse des logs système
+- Bouncer configuré sur pfSense pour appliquer les décisions de blocage
+- Communication entre CrowdSec et le firewall via API
 
----
-
-## 🛡️ Fonctionnement
-
-- Analyse comportementale des logs
-- Détection brute force / scans
-- Blocage automatique via firewall
+Cette architecture permet de séparer la détection (analyse) de l’action (blocage).
 
 ---
 
-## 🚧 Améliorations prévues
+## ⚙️ Fonctionnement
 
-- Dashboard
-- Intégration monitoring
-- Tests d’attaque contrôlés
+1. Les logs (SSH, système, services) sont analysés en temps réel.
+2. CrowdSec détecte des comportements anormaux (ex : multiples tentatives de connexion échouées).
+3. Une décision de bannissement est générée.
+4. Le bouncer transmet cette décision au firewall.
+5. L’adresse IP est automatiquement bloquée.
+
+---
+
+## 🛡️ Apport en sécurité
+
+- Automatisation du blocage des attaques simples
+- Réduction de la surface d’exposition
+- Amélioration de la réactivité face aux scans automatisés
+- Centralisation des décisions de sécurité
+
+---
+
+## 🚧 Évolutions prévues
+
+- Mise en place du dashboard
+- Tests d’attaque contrôlés pour valider l’efficacité
+- Intégration dans une stratégie globale de monitoring
