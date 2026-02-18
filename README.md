@@ -10,6 +10,7 @@ L’objectif est de concevoir, sécuriser et documenter une infrastructure virtu
 
 - Proxmox VE – Virtualisation
 - pfSense – Pare-feu et segmentation réseau
+- CrowdSec – Détection et blocage d’attaques
 - Windows Server – Active Directory & GPO
 - Debian – Services Linux
 - Python – Automatisation & outils réseau
