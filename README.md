@@ -46,4 +46,6 @@ Outil graphique permettant le calcul de sous-réseaux IPv4
 
 ## 📌 Objectif professionnel
 🎯 Évoluer au sein d’une équipe infrastructure afin de participer à l’administration, la sécurisation et l’optimisation d’environnements systèmes et réseaux.
+🎯 Ouvert à une opportunité en stage, CDD ou CDI en administration systèmes et réseaux – mobile géographiquement.
+
 
