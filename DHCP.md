@@ -1,5 +1,4 @@
-# 📦 Mise en place du serveur DHCP – Infrastructure HomeForge
-
+# 📦 Mise en place du serveur DHCP
 ## 🎯 Objectif
 
 Mettre en place un serveur DHCP centralisé sur le contrôleur de domaine afin de :
