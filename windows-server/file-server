@@ -1,0 +1,73 @@
+# File & Storage Directory — Déploiement partages + mappage lecteurs (GPO)
+
+## Contexte
+- Ajout d’un disque **D:** sur le serveur afin de séparer le système et les données.
+- Création d’un dossier racine **D:\DATA** regroupant les dossiers métiers :
+  - `Direction`, `Marketing`, `Support`, `Compta`, `Dev`, `Commun`
+- Les accès sont gérés via **groupes AD** (pas d’utilisateurs en direct) et selon le principe du **moindre privilège**.
+
+---
+
+## Modèle de droits (NTFS)
+- **Administrateurs** + **SYSTEM** : contrôle total sur tous les dossiers.
+- Chaque **métier** : droits *Modification* (lecture/écriture/exécution) sur **son** dossier uniquement.
+- **Direction** :
+  - Accès **Lecture seule** sur tous les dossiers métiers (supervision).
+  - Accès **Modification** sur le dossier `Direction` (son dossier).
+
+> NB : Les permissions NTFS sont la référence principale (contrôle effectif des accès).
+
+---
+
+## Partages SMB
+Chaque dossier métier est partagé en SMB via un partage caché (`$`) :
+- `Direction$`, `Marketing$`, `Support$`, `Compta$`, `Dev$`, `Commun$`
+
+### Permissions de partage
+- Groupe : **Utilisateurs authentifiés**
+- Droit : **Lecture**
+  
+> Le partage SMB reste volontairement “large”, la restriction fine est assurée par les **ACL NTFS**.
+
+---
+
+## Mappage des lecteurs (GPO)
+### Objectif
+Faire apparaître automatiquement les lecteurs réseau pour les utilisateurs, selon leur service, sans intervention manuelle.
+
+### Emplacement de configuration
+- GPO liée à l’OU : **Service**
+- Chemin :
+  - `Configuration utilisateur → Préférences → Paramètres Windows → Mappages de lecteurs`
+
+### Principe
+- **1 lecteur par métier** + **1 lecteur Commun**
+- Mappage basé sur le **ciblage au niveau de l’élément (Item-level targeting)** via groupes AD.
+- La **Direction** doit voir tous les lecteurs (lecture), donc ciblage en **OU (OR)** :
+  - `Groupe métier OR Direction`
+
+Exemple :
+- `D:` → `\\SRV-DC01\Dev$` (ciblage : `Developpement OR Direction`)
+
+---
+
+## Déploiement / Mise à jour côté poste client
+Les lecteurs GPO (User Preferences) s’appliquent principalement à l’ouverture de session.
+
+### Pour prendre en compte les changements
+1. **Déconnexion / reconnexion** de l’utilisateur
+2. Si besoin :
+   - `gpupdate /force` (si CMD autorisé)
+   - ou redémarrage du poste
+
+> Important : le compte **HOME\administrateur** n’est pas dans l’OU `Service`, donc la GPO de mappage ne s’applique pas à lui. Les tests doivent être faits avec un utilisateur métier placé dans l’OU `Service`.
+
+---
+
+## Note sécurité (durcissement)
+Une GPO de sécurité a été mise en place pour **restreindre l’accès à l’invite de commande (CMD)** :
+- Utilisateurs standards : CMD désactivé
+- Administrateurs : autorisé
+
+Objectif :
+- Limiter les actions non autorisées et réduire la surface d’attaque sur les postes utilisateurs.
