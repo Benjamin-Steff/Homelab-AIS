@@ -19,7 +19,7 @@ Le lab est connecté au réseau domestique, mais les environnements internes son
 
 Interfaces configurées :
 
-- WAN : 192.168.xxx.xxx/24 (connecté au réseau domestique)
+- WAN : 192.168.42.254/24 (connecté au réseau domestique)
 - LAN 1 : 10.0.0.1/16
 - LAN 2 : 172.16.0.1/16
 
@@ -34,7 +34,7 @@ pfSense assure :
 
 | Zone   | Plage IP        | Rôle |
 |--------|----------------|------|
-| WAN    | 192.168.xxx.xxx/24 | Accès vers réseau domestique |
+| WAN    | 192.168.42.0/24 | Accès vers réseau domestique |
 | LAN 1  | 10.0.0.0/16     | Réseau interne principal |
 | LAN 2  | 172.16.0.0/16   | Réseau interne secondaire |
 
