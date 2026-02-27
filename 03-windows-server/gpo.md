@@ -11,6 +11,26 @@ Mettre en place des stratégies de groupe afin de :
 
 ---
 
+## 📦 Prérequis
+
+Avant la création des stratégies de groupe, les éléments suivants doivent être installés :
+
+- Rôle Active Directory Domain Services (AD DS)
+- DNS intégré
+- Console Group Policy Management (GPMC)
+
+La gestion des GPO est réalisée via la console :
+
+Server Manager → Tools → Group Policy Management
+
+Les postes clients doivent être :
+
+- Membres du domaine
+- Redémarrés après intégration
+- Connectés au réseau interne
+
+---
+
 # 🧱 GPO – Blocage de l’invite de commande
 
 ## 📌 Nom de la GPO
