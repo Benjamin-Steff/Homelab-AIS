@@ -11,14 +11,14 @@
                         pfSense (VM 100)
                         WAN: 192.168.42.254
                                │
-         ┌─────────────────────┼─────────────────────┐
-         │                     │                     │
-     vmbr2 (LAN)          vmbr3 (LAN2)          (Future DMZ)
-     10.0.0.0/16          172.16.0.0/16
-         │                     │
-   ┌─────┼──────────┐          │
-   │     │          │          │
- Windows  Clients   CrowdSec   (No VM yet)
+         ┌─────────────────────┼
+         │                     │                     
+     vmbr2 (LAN)          (Future DMZ)
+     10.0.0.0/16          
+         │                     
+   ┌─────┼──────────┐          
+   │     │          │          
+ Windows  Clients   CrowdSec   
  Server
  (AD)
 ```
