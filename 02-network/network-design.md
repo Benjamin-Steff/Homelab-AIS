@@ -4,7 +4,9 @@
 
 L’infrastructure réseau du homelab est structurée autour d’un firewall pfSense jouant le rôle de point central de routage et de filtrage.
 
-Le lab est connecté au réseau domestique, mais les environnements internes sont isolés via segmentation logique.
+Le lab est connecté au réseau domestique, mais l’environnement interne est isolé via segmentation logique.
+
+---
 
 ## Choix d’architecture
 
@@ -15,7 +17,7 @@ Le firewall pfSense est positionné comme point central de routage afin de :
 - Permettre une future mise en place de DMZ
 - Isoler l’infrastructure interne du réseau domestique
 
-Le choix d’une segmentation logique via interfaces distinctes permet de limiter les mouvements latéraux en cas de compromission.
+La segmentation logique permet de limiter les mouvements latéraux en cas de compromission.
 
 ---
 
@@ -31,25 +33,25 @@ Le choix d’une segmentation logique via interfaces distinctes permet de limite
 Interfaces configurées :
 
 - WAN : 192.168.x.254/24 (connecté au réseau domestique)
-- LAN 1 : 10.0.0.1/16
-- LAN 2 : 172.16.0.1/16
+- LAN : 10.0.0.1/16
 
 pfSense assure :
 - Routage inter-réseaux
 - NAT sortant vers Internet
-- Attribution DHCP pour les réseaux internes
+- Attribution DHCP pour le réseau interne
 
 ---
 
 ## 3. Segmentation interne
 
-| Zone   | Plage IP        | Rôle |
-|--------|----------------|------|
-| WAN    | 192.168.x.0/24 | Accès vers réseau domestique |
-| LAN 1  | 10.0.0.0/16     | Réseau interne principal |
-| LAN 2  | 172.16.0.0/16   | Réseau interne secondaire |
+| Zone | Plage IP        | Rôle |
+|------|----------------|------|
+| WAN  | 192.168.x.0/24 | Accès vers réseau domestique |
+| LAN  | 10.0.0.0/16     | Réseau interne principal |
 
-Chaque réseau interne est isolé et contrôlé par pfSense.
+Le réseau LAN est contrôlé par pfSense et isolé du réseau domestique.
+
+---
 
 ## 🗺️ Topologie réseau actuelle
 
@@ -59,10 +61,10 @@ Chaque réseau interne est isolé et contrôlé par pfSense.
 
 ## 4. Principe de sécurité
 
-- Les réseaux internes ne communiquent qu’à travers pfSense
-- Le NAT est utilisé pour l’accès Internet
-- La segmentation limite les déplacements latéraux
-- Les services DHCP sont séparés par segment
+- Le réseau interne communique avec Internet via NAT
+- Le trafic WAN entrant est bloqué par défaut
+- Les flux sont filtrés via règles pfSense
+- L’accès distant est sécurisé via OpenVPN
 
 ---
 
