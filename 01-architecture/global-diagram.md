@@ -1,14 +1,20 @@
-Internet
-   │
-Box FAI
-   │
-Réseau domestique 192.168.X.0/24
-   │
-Proxmox
-   │
-pfSense (VM 100)
-   ├── WAN → 192.168.42.254
-   └── LAN → 10.0.0.1/16
-            ├── Windows Server (AD)
-            ├── Windows Clients
-            └── CrowdSec
+# 🌍 Global Network Diagram
+
+                     INTERNET
+                         │
+                    Box FAI
+              (192.168.X.0/24)
+                         │
+                 WAN – pfSense
+                192.168.42.254
+                         │
+               ┌─────────┴─────────┐
+               │                   │
+              LAN               (Future DMZ)
+         10.0.0.0/16
+               │
+        ┌──────┼───────────────┐
+        │      │               │
+   Windows   Windows        CrowdSec
+   Server     Clients
+   (AD)
