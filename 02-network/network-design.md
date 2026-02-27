@@ -40,6 +40,10 @@ pfSense assure :
 
 Chaque réseau interne est isolé et contrôlé par pfSense.
 
+## 🗺️ Topologie réseau actuelle
+
+![Network Topology](../assets/diagrams/network-topology.png)
+
 ---
 
 ## 4. Principe de sécurité
