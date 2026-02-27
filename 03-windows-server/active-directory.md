@@ -59,7 +59,7 @@ homelab.local
 
 ## 👥 Groupes de sécurité
 
-![Groupes AD](../assets/diagrams/ad-groups.png)
+![Groupes AD](../assets/diagrams/ad-groupes.png)
 
 ---
 
