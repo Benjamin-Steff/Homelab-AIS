@@ -11,8 +11,3 @@
 - Gateway : 10.0.0.1
 - DHCP : Activé
 
-## LAN2 – Services / Lab
-
-- 172.16.0.0/16
-- Gateway : 172.16.0.1
-- DHCP : Activé
