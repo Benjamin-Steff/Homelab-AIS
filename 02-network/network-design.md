@@ -6,6 +6,17 @@ L’infrastructure réseau du homelab est structurée autour d’un firewall pfS
 
 Le lab est connecté au réseau domestique, mais les environnements internes sont isolés via segmentation logique.
 
+## Choix d’architecture
+
+Le firewall pfSense est positionné comme point central de routage afin de :
+
+- Centraliser les règles de sécurité
+- Contrôler les flux inter-réseaux
+- Permettre une future mise en place de DMZ
+- Isoler l’infrastructure interne du réseau domestique
+
+Le choix d’une segmentation logique via interfaces distinctes permet de limiter les mouvements latéraux en cas de compromission.
+
 ---
 
 ## 2. Topologie générale
