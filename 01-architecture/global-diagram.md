@@ -22,3 +22,6 @@
  Server
  (AD)
 ```
+
+> L’ensemble des machines virtuelles est hébergé sur Proxmox VE.
+> La segmentation réseau est assurée via des bridges dédiés (vmbr).
