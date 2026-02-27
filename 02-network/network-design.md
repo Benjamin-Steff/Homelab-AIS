@@ -53,6 +53,6 @@ Chaque réseau interne est isolé et contrôlé par pfSense.
 
 ## 5. Évolution prévue
 
-- Transformation du LAN 2 en DMZ dédiée
+- Création d'une DMZ dédiée
 - Mise en place de règles de filtrage inter-segments strictes
 - Ajout d’un réseau Management isolé
