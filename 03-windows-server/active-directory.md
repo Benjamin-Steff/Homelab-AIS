@@ -53,19 +53,19 @@ homelab.local
 
 ## 📂 Organisation des services
 
-![Structure Services](../../assets/diagrams/ad-service.png)
+![Structure Services](../assets/diagrams/ad-service.png)
 
 ---
 
 ## 👥 Groupes de sécurité
 
-![Groupes AD](../../assets/diagrams/ad-groups.png)
+![Groupes AD](../assets/diagrams/ad-groups.png)
 
 ---
 
 ## 👤 Exemple utilisateur
 
-![Utilisateur AD](../../assets/diagrams/ad-user.png)
+![Utilisateur AD](../assets/diagrams/ad-user.png)
 
 ---
 
