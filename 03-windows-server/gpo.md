@@ -104,16 +104,4 @@ Le blocage de l’invite de commandes permet de :
 - Réduire les risques de scripts malveillants
 - Restreindre les actions utilisateurs standards
 
----
-
-# 📌 Conclusion
-
-La stratégie GPO est fonctionnelle et validée.
-
-Elle démontre :
-
-- Maîtrise du ciblage par OU
-- Compréhension de l’héritage
-- Capacité de test et validation
-- Mise en œuvre de restrictions sécurité poste
 
