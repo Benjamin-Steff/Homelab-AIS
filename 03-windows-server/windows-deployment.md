@@ -18,7 +18,7 @@ Rôles installés :
 
 Réseau : 10.0.0.0/16
 
-Stockage images : D:\RemoteInstall
+Stockage images : C:\RemoteInstall
 
 ---
 
