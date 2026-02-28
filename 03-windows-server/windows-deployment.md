@@ -81,12 +81,4 @@ Stockage images : C:\RemoteInstall
 - Déploiement applicatif automatisé
 - Segmentation PXE via VLAN
 
----
 
-## 🧠 Compétences démontrées
-
-- Interaction DHCP / PXE
-- Configuration WDS
-- Déploiement réseau d’OS
-- Gestion d’infrastructure Windows
-- Compréhension du boot réseau
