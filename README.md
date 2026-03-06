@@ -78,7 +78,7 @@ Outil graphique permettant le calcul de sous-réseaux IPv4
 
 ## 📌 Objectif professionnel
 
-Administrateur systèmes & réseaux en évolution vers des environnements sécurisés.
+Administrateur systèmes & réseaux junior en évolution vers des environnements sécurisés.
 
 Ouvert à :
 - Stage
