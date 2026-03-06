@@ -19,31 +19,29 @@ GLPI peut également s’intégrer à un annuaire **LDAP / Active Directory** af
 
 ## Intégration dans le homelab
 
-Dans ce homelab, GLPI a été déployé pour simuler un **outil de support IT d’entreprise**.  
-L’objectif n’était pas de construire une plateforme ITSM complète, mais d’ajouter une brique réaliste de **gestion des incidents** et de **support utilisateur** à l’infrastructure existante.
-
-Cette intégration permet de compléter l’environnement déjà en place autour de :
-
-- **Windows Server**
-- **Active Directory**
-- **services web internes**
-- **gestion des utilisateurs**
-
-GLPI apporte ainsi une dimension plus opérationnelle au lab, en reproduisant un usage concret que l’on retrouve dans de nombreuses organisations.
+Dans ce homelab, GLPI est déployé pour simuler un **outil de support IT d’entreprise**.  
+Il permet de reproduire un workflow réaliste de gestion des incidents et des demandes utilisateurs.
 
 ---
 
-## Intérêt de GLPI dans le lab
+## Architecture de déploiement
 
-L’ajout de GLPI dans le homelab permet de :
+Dans ce lab, **GLPI est installé sur une machine virtuelle Ubuntu dédiée**.
 
-- simuler un **helpdesk interne**
-- centraliser les **demandes utilisateurs**
-- suivre les **tickets d’incident**
-- associer les demandes à des **utilisateurs**
-- illustrer l’usage d’un **outil ITSM** dans une infrastructure d’entreprise
+Le service fonctionne sur une pile web classique :
 
-Même dans une version simple, cela permet de montrer que le lab ne se limite pas à l’administration système pure, mais intègre aussi une partie **gestion du support** et **organisation des interventions**.
+- Apache
+- PHP
+- MariaDB
+
+Le serveur GLPI est séparé du **Windows Server**, qui reste dédié aux rôles d’infrastructure :
+
+- Active Directory
+- DNS
+- DHCP
+- gestion des utilisateurs
+
+Cette séparation permet de reproduire une **architecture plus réaliste**, où les services applicatifs sont isolés des contrôleurs de domaine.
 
 ---
 
@@ -51,22 +49,21 @@ Même dans une version simple, cela permet de montrer que le lab ne se limite pa
 
 ### Interface d’installation
 
-![Installation GLPI](.../assets/diagrams/glpi.png)
+<p align="center">
+  <img src="../assets/diagrams/glpi.png" width="800">
+</p>
 
 ### Exemple de ticket
 
-![Ticket GLPI](Ticket-test.png)
+<p align="center">
+  <img src="../assets/diagrams/Ticket-test.png" width="800">
+</p>
 
 ### Ajout / synchronisation d’utilisateurs
 
-![Synchronisation utilisateurs GLPI](glpi-synchro-user.png)
-
----
-
-## Documentation d’installation
-
-La procédure officielle d’installation de GLPI est disponible ici :  
-[Documentation officielle GLPI](https://help.glpi-project.org/tutorials/fr/procedures/install_glpi)
+<p align="center">
+  <img src="../assets/diagrams/glpi-synchro-user.png" width="800">
+</p>
 
 ---
 
