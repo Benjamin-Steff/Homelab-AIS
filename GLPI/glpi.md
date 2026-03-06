@@ -51,7 +51,7 @@ Même dans une version simple, cela permet de montrer que le lab ne se limite pa
 
 ### Interface d’installation
 
-![Installation GLPI](glpi.png)
+![Installation GLPI](.../assets/diagrams/glpi.png)
 
 ### Exemple de ticket
 
